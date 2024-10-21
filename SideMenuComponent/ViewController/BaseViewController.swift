@@ -56,6 +56,8 @@ class BaseViewController: UIViewController {
     private func animateMenu(isOpening: Bool,completion: @escaping () -> Void) {
         let screenWidth: CGFloat = view.frame.width * 0.5
         
+        self.menuView.layer.zPosition = 1
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.menuView.snp.updateConstraints { make in
                 if isOpening {

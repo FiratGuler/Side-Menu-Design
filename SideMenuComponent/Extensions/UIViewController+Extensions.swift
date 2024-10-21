@@ -10,8 +10,9 @@ import UIKit
 extension UIViewController {
     
     func addTapGestureToCallFunction(targetVC: UIViewController, action: Selector) {
-         let tapGesture = UITapGestureRecognizer(target: self, action: action)
-         view.addGestureRecognizer(tapGesture)
-     }
+        let tapGesture = UITapGestureRecognizer(target: self, action: action)
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
 }
 
